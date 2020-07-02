@@ -11,19 +11,50 @@
               aspect-ratio="1"
               contain
             ></v-img>
+            <div>
+              <v-chip class="ma-2" color="primary">Default</v-chip>
+              <v-chip class="ma-2" color="primary">Default</v-chip>
+            </div>
           </v-col>
           <v-col>
             <v-list class="transparent">
-              <v-list-item>
+              <v-list-item two-line>
                 <v-list-item-content>
                   <v-list-item-title>Weight</v-list-item-title>
                   <v-list-item-subtitle>{{pokemon.weight/10}} kg.</v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
-              <v-list-item>
+              <v-list-item two-line>
                 <v-list-item-content>
                   <v-list-item-title>Height</v-list-item-title>
                   <v-list-item-subtitle>{{pokemon.height*10}} cm.</v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+              <v-list-item two-line>
+                <v-list-item-content>
+                  <v-list-item-title>Movements</v-list-item-title>
+                  <v-list-item-subtitle>
+                    <v-list>
+                      <v-list-item>
+                        <v-list-item-subtitle>a</v-list-item-subtitle>
+                      </v-list-item>
+                      <v-list-item>
+                        <v-list-item-subtitle>a</v-list-item-subtitle>
+                      </v-list-item>
+                      <v-list-item>
+                        <v-list-item-subtitle>a</v-list-item-subtitle>
+                      </v-list-item>
+                      <v-list-item>
+                        <v-list-item-subtitle>a</v-list-item-subtitle>
+                      </v-list-item>
+                      <v-list-item>
+                        <v-list-item-subtitle>a</v-list-item-subtitle>
+                      </v-list-item>
+                      <v-list-item>
+                        <v-list-item-subtitle>a</v-list-item-subtitle>
+                      </v-list-item>
+                    </v-list>
+                  </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
             </v-list>
