@@ -1,7 +1,9 @@
 <template>
   <v-card>
     <v-toolbar color="primary" dark class="justify-center">{{pokemon.name | uppercase}}</v-toolbar>
-    <v-card-text>{{urlPokemon}}</v-card-text>
+    <v-card-text>
+      <v-img :src="pokemon.sprites.front_default" aspect-ratio="2" contain></v-img>
+    </v-card-text>
     <v-card-actions>
       <v-btn small block color="secondary">See more</v-btn>
     </v-card-actions>
@@ -38,18 +40,18 @@ export default {
       axios
         .get(resource)
         .then(response => {
-          console.log("\nresponse-->", response);
           const { data } = response;
-          console.log(data);
-          this.pokemon = data;
+          // console.log(data);
 
-          // if (data !== null && data !== undefined) {
-          //   const { results } = data;
-          //   if (results !== null && results !== undefined) {
-          //     console.log("results", results);
-          //     this.pokemonList = results;
-          //   }
-          // }
+          if (data !== null && data !== undefined) {
+            this.pokemon = data;
+            const { sprites } = this.pokemon;
+
+            if (sprites !== null && sprites !== undefined) {
+              console.log("sprites", sprites);
+              this.pokemonList = sprites;
+            }
+          }
         })
         .catch(error => {
           console.error(error);
