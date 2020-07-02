@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark>
-      <h1>POKEDEX - "Coursera / 2020"</h1>
+      <h1>POKEDEX - "Coursera"</h1>
     </v-app-bar>
     <v-main>
       <v-container fluid>
