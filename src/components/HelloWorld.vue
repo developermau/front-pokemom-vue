@@ -1,14 +1,12 @@
 <template>
-  <div>
-    <h1>Pokemons</h1>
-    <v-container fluid>
-      <v-row>
-        <v-col cols="12" sm="6" md="4" v-for="(pokemon, index) in pokemonList" :key="index">
-          <PokemonCard :urlPokemon="pokemon.url" />
-        </v-col>
-      </v-row>
-    </v-container>
-  </div>
+  <v-container fluid>
+    <h1 class="text-center">List of Pokemons</h1>
+    <v-row>
+      <v-col cols="12" sm="6" md="4" v-for="(pokemon, index) in pokemonList" :key="index">
+        <PokemonCard :urlPokemon="pokemon.url" />
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

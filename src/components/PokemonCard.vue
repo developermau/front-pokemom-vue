@@ -2,10 +2,15 @@
   <v-card>
     <v-toolbar color="primary" dark class="justify-center">{{pokemon.name | uppercase}}</v-toolbar>
     <v-card-text>
-      <v-img :src="pokemon.sprites.front_default" aspect-ratio="2" contain></v-img>
+      <v-img
+        v-if="pokemon.sprites !== undefined"
+        :src="pokemon.sprites.front_default"
+        aspect-ratio="2"
+        contain
+      ></v-img>
     </v-card-text>
     <v-card-actions>
-      <v-btn small block color="secondary">See more</v-btn>
+      <v-btn small block color="secondary" :to="`pokemon/${getPokemonIdFromURL(urlPokemon)}`">See more</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -56,6 +61,14 @@ export default {
         .catch(error => {
           console.error(error);
         });
+    },
+    getPokemonIdFromURL(url){
+      // Example: https://pokeapi.co/api/v2/pokemon/9/
+      console.log("url", url);
+
+      url = url.replace("https://pokeapi.co/api/v2/pokemon/", "");
+
+      return url;
     }
   }
 };
