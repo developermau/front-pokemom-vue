@@ -3,9 +3,9 @@
     <v-app-bar app color="primary" dark>
       <h1>POKEDEX</h1>
     </v-app-bar>
-    <v-content>
+    <v-main>
       <HelloWorld />
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
