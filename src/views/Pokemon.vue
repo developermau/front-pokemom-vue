@@ -4,19 +4,15 @@
     <v-card elevation="2" outlined>
       <v-card-text>
         <v-row class="text-center">
-          <v-col>
+          <v-col cols="6">
             <v-img
               v-if="pokemon.sprites !== undefined"
               :src="pokemon.sprites.front_default"
               aspect-ratio="1"
               contain
             ></v-img>
-            <div>
-              <v-chip class="ma-2" color="primary">Default</v-chip>
-              <v-chip class="ma-2" color="primary">Default</v-chip>
-            </div>
           </v-col>
-          <v-col>
+          <v-col cols="6">
             <v-list class="transparent">
               <v-list-item two-line>
                 <v-list-item-content v-if="pokemon.types != undefined">
@@ -41,11 +37,16 @@
                 <v-list-item-content v-if="pokemon.moves !== undefined">
                   <v-list-item-title>Movements</v-list-item-title>
                   <v-list-item-subtitle>
-                    <v-list v-if="pokemon.moves.length > 0">
-                      <v-list-item v-for="(move, index) in pokemon.moves" :key="index">
-                        <v-list-item-subtitle>a</v-list-item-subtitle>
-                      </v-list-item>
-                    </v-list>
+                    <v-container fluid v-if="pokemon.moves.length > 0">
+                      <v-row>
+                        <v-chip
+                          v-for="(move, index) in pokemon.moves"
+                          :key="index"
+                          class="ma-2"
+                          color="primary"
+                        >{{move.move.name}}</v-chip>
+                      </v-row>
+                    </v-container>
                   </v-list-item-subtitle>
                 </v-list-item-content>
                 <v-list-item-content v-else>
